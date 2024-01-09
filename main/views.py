@@ -51,7 +51,7 @@ class ConfirmEmailView(VerifyEmailView):
         self.kwargs['key'] = self.kwargs['key']
         confirmation = self.get_object()
         confirmation.confirm(self.request)
-        return redirect('http://127.0.0.1:3000/users/')
+        return redirect('http://127.0.0.1:3000/sign-in/')
 
     def get_object(self, queryset=None):
         key = self.kwargs['key']
