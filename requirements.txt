@@ -12,3 +12,4 @@ pipenv
 install
 deep-translator
 gunicorn 
+python-decouple
