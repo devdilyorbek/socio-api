@@ -14,3 +14,4 @@ deep-translator
 gunicorn 
 python-decouple
 dj_database_url
+psycopg2-binary
