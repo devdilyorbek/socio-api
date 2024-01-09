@@ -8,7 +8,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -69,8 +69,8 @@ DATABASES = {
 }
 
 #
-
-DATABASES["default"] = dj_database_url.parse("postgres://sociosphere_app_user:6zH6BWpUBNp3t9gZ40LzmKGwuKCLcgf9@dpg-cme3306v3ddc73c3sk10-a.oregon-postgres.render.com/sociosphere_app")
+db_url = os.environ.get("DATABASE_URL")
+DATABASES["default"] = dj_database_url.parse(db_url)
 
 AUTH_PASSWORD_VALIDATORS = [
     {
